@@ -168,7 +168,7 @@ async def on_message(message):
             author_name = f'{author.nick} ({author})'
         else:
             author_name = str(author)
-        embed.set_author(name=author_name, icon_url=author.avatar_url if author.avatar else author.default_avatar_url)
+        embed.set_author(name=author_name, icon_url=author.avatar_url_as(static_format='png') if author.avatar else author.default_avatar_url)
 
         to_send = f'{author.id}'
         if message.attachments:
